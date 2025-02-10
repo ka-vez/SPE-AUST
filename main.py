@@ -32,6 +32,31 @@ db_dependency = Annotated[Session, Depends(get_db)]
 async def render_home_page(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
+@app.get("/about")
+async def render_about_page(request: Request):
+    return templates.TemplateResponse("about.html", {'request': request})
+
+@app.get("/benefits")
+async def render_benefits_page(request: Request):
+    return templates.TemplateResponse("benefits.html", {'request': request})
+
+@app.get("/seminars")
+async def render_benefits_page(request: Request):
+    return templates.TemplateResponse("seminars.html", {'request': request})
+
+@app.get("/contact-us")
+async def render_benefits_page(request: Request):
+    return templates.TemplateResponse("contact-us.html", {'request': request})
+
+@app.get("/our-team")
+async def render_benefits_page(request: Request):
+    return templates.TemplateResponse("our-team.html", {'request': request})
+
+@app.get("/testimonial")
+async def render_benefits_page(request: Request):
+    return templates.TemplateResponse("testimonial.html", {'request': request})
+
+
 # endpoints #
 @app.get("/users")
 async def get_registered_users(db: db_dependency):
@@ -40,8 +65,7 @@ async def get_registered_users(db: db_dependency):
 
 @app.post("/register", status_code=status.HTTP_201_CREATED)
 async def register_users(db: db_dependency, registration_request: RegistrationRequest):
-    user = Registration(**registration_request.model_dump())
-    db.add(user)
+    volunteer = Registration(**registration_request.model_dump())
+    db.add(volunteer)
     db.commit()
-    print(user)
     return {"message": "Registered Successfully"}

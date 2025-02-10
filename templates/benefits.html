@@ -1,203 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    
-      <div class="container-xxl position-relative p-0">
-  <div class="container-xxl bg-primary hero-header">
-      <div class="container px-lg-5">
-        <div class="row g-5 align-items-end">
-          <div class="col-lg-6 text-center text-lg-start">
-            <h1 class="text-white mb-4 animated slideInDown">
-              Empowering the Future of Science and &amp; Technology
-            </h1>
-            <p class="text-white pb-3 animated slideInDown">
-              At SPE African University of Science and Technology, we cultivate intelligent and innovative minds. 
-              Our commitment to excellence and cutting-edge research ensures students thrive and shape the future.
-              Unleash your potential and make a lasting impact in science and technology.
-
-
-            </p>
-            <a
-              href=""
-              class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft"
-              >Read More</a
-            >
-            <a
-              href=""
-              class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight"
-              >Contact Us</a
-            >
-          </div>
-          <div class="col-lg-6 text-center text-lg-start">
-            <img
-              class="img-fluid animated zoomIn"
-              src="{{ url_for ('static', path='img/factory.png') }}"
-              alt=""
-              width="600px"
-              height="400px"
-            />
-          </div>
+      <div class="container-xxl py-5 bg-primary hero-header">
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">Benefits</h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Benefits</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-      </div>
     </div>
       </div>
-      <!-- Feature Start -->
-      <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5">
-          <div class="row g-4">
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="feature-item bg-light rounded text-center p-4">
-                <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                <h5 class="mb-3">Workshops & Seminars Description</h5>
-                <p class="m-0">
-                  Join our interactive workshops and seminars to gain practical knowledge and 
-                  skills in petroleum engineering and related fields.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="feature-item bg-light rounded text-center p-4">
-                <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                <h5 class="mb-3">Networking Opportunities Description</h5>
-                <p class="m-0">
-                  Connect with industry professionals, alumni, and peers to expand your professional 
-                  network and explore career opportunities.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="feature-item bg-light rounded text-center p-4">
-                <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                <h5 class="mb-3">Research & Development Description</h5>
-                <p class="m-0">
-                  Participate in cutting-edge research projects and contribute to advancements 
-                  in science and technology within the petroleum industry.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Feature End -->
-
-      <!-- About Start -->
-      <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5">
-          <div class="row g-5 align-items-center">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-              <p class="section-title text-secondary">About Us<span></span></p>
-              <h1 class="mb-5">
-                Learn More About What SPE is All About
-              </h1>
-              <p class="mb-4">
-                At the SPE chapter of African University of Science and Technology, we empower students with the skills to excel in petroleum engineering and many other fields. Our mission is to cultivate innovative thinkers and industry leaders passionate about making a difference.
-              </p>
-              <div class="skill mb-4">
-                <div class="d-flex justify-content-between">
-                  <p class="mb-2">Workshops & Seminars Description</p>
-                  <p class="mb-2">85%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar bg-primary"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div class="skill mb-4">
-                <div class="d-flex justify-content-between">
-                  <p class="mb-2">Networking Opportunities Description</p>
-                  <p class="mb-2">90%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar bg-secondary"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div class="skill mb-4">
-                <div class="d-flex justify-content-between">
-                  <p class="mb-2">Research & Development Description</p>
-                  <p class="mb-2">95%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar bg-dark"
-                    role="progressbar"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <a
-                href=""
-                class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3"
-                >Read More</a
-              >
-            </div>
-            <div class="col-lg-6">
-              <img
-                class="img-fluid wow zoomIn"
-                data-wow-delay="0.5s"
-                src="{{ url_for('static', path='img/about.png') }}"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- About End -->
-
-      <!-- Facts Start -->
-      <div
-        class="container-xxl bg-primary fact py-5 wow fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <div class="container py-5 px-lg-5">
-          <div class="row g-4">
-            <div
-              class="col-md-6 col-lg-3 text-center wow fadeIn"
-              data-wow-delay="0.1s"
-            >
-              <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-              <h1 class="text-white mb-2" data-toggle="counter-up">3</h1>
-              <p class="text-white mb-0">Years Experience</p>
-            </div>
-            <div
-              class="col-md-6 col-lg-3 text-center wow fadeIn"
-              data-wow-delay="0.3s"
-            >
-              <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
-              <h1 class="text-white mb-2" data-toggle="counter-up">13</h1>
-              <p class="text-white mb-0">Executive Members</p>
-            </div>
-            <div
-              class="col-md-6 col-lg-3 text-center wow fadeIn"
-              data-wow-delay="0.5s"
-            >
-              <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-              <h1 class="text-white mb-2" data-toggle="counter-up">121</h1>
-              <p class="text-white mb-0">Registered Volunteers</p>
-            </div>
-            <div
-              class="col-md-6 col-lg-3 text-center wow fadeIn"
-              data-wow-delay="0.7s"
-            >
-              <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-              <h1 class="text-white mb-2" data-toggle="counter-up">30</h1>
-              <p class="text-white mb-0">Completed Projects</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Facts End -->
 
       <!-- Service Start -->
       <div class="container-xxl py-5">
@@ -343,36 +163,6 @@
             <h1 class="text-center mb-5">Recently Completed Seminars</h1>
           </div>
           <div class="row g-4 portfolio-container">
-            <div
-            class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="rounded overflow-hidden">
-              <div class="position-relative overflow-hidden">
-                <img
-                  class="img-fluid w-100"
-                  src="{{ url_for('static', path='img/strategy.jpg') }}"
-                  alt=""
-                />
-                <div class="portfolio-overlay">
-                  <a
-                    class="btn btn-square btn-outline-light mx-1"
-                    href="{{ url_for('static', path='img/strategy.jpg') }}"
-                    data-lightbox="portfolio"
-                    ><i class="fa fa-eye"></i
-                  ></a>
-                  <a class="btn btn-square btn-outline-light mx-1" href=""
-                    ><i class="fa fa-link"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="bg-light p-4">
-                <h5 class="lh-base mb-0">
-                  The Student CEO - Strategies for Navigating Business Dynamics on Campus
-                </h5>
-              </div>
-            </div>
-            </div>
             <div
               class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp"
               data-wow-delay="0.1s"
@@ -523,7 +313,36 @@
                 </div>
               </div>
             </div>
-
+            <div
+              class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
+              <div class="rounded overflow-hidden">
+                <div class="position-relative overflow-hidden">
+                  <img
+                    class="img-fluid w-100"
+                    src="{{ url_for('static', path='img/africa.jpg') }}"
+                    alt=""
+                  />
+                  <div class="portfolio-overlay">
+                    <a
+                      class="btn btn-square btn-outline-light mx-1"
+                      href="{{ url_for('static', path='img/africa.jpg') }}"
+                      data-lightbox="portfolio"
+                      ><i class="fa fa-eye"></i
+                    ></a>
+                    <a class="btn btn-square btn-outline-light mx-1" href=""
+                      ><i class="fa fa-link"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="bg-light p-4">
+                  <h5 class="lh-base mb-0">
+                    Building the Energy Workforce of Tomorrow: Insight on Innovation, Technology and Talent Development
+                  </h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -596,92 +415,4 @@
       </div>
       <!-- Testimonial End -->
 
-      <!-- Team Start -->
-      <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5">
-          <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <p class="section-title text-secondary justify-content-center">
-              <span></span>Our Executives<span></span>
-            </p>
-            <h1 class="text-center mb-5">Our Executives Members</h1>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="team-item bg-light rounded">
-                <div class="text-center border-bottom p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="{{ url_for('static', path='img/royalu.jpg') }}"
-                    alt=""
-                  />
-                  <h5>Royal Ugorji</h5>
-                  <span>President</span>
-                </div>
-                <div class="d-flex justify-content-center p-4">
-                  <a class="btn btn-square mx-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/royal-ugorji-b196b6253/"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="team-item bg-light rounded">
-                <div class="text-center border-bottom p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="{{ url_for('static', path='img/zainab_g.jpg') }}"
-                    alt=""
-                  />
-                  <h5>Zainab Gambo</h5>
-                  <span>Vice-President</span>
-                </div>
-                <div class="d-flex justify-content-center p-4">
-                  <a class="btn btn-square mx-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/zainab-gambo-727261328/"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="team-item bg-light rounded">
-                <div class="text-center border-bottom p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="{{ url_for('static', path='img/kavez.jpg') }}"
-                    alt=""
-                  />
-                  <h5>Adegbite David</h5>
-                  <span>Web Developer</span>
-                </div>
-                <div class="d-flex justify-content-center p-4">
-                  <a class="btn btn-square mx-1" href="https://web.facebook.com/profile.php?id=61555712094658"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href="https://www.instagram.com/_kavez/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                  <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/adegbite-david-b938b429a/"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Team End -->
-
-
-    {% endblock %}
+{% endblock %}
