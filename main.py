@@ -1,31 +1,22 @@
-from db.database import SessionLocal, engine
-from db.models import Base, Registration
-from schemas import RegistrationRequest
+from db.database import engine
+from db.models import Base
+import endpoints
 
-from typing import Annotated
 from fastapi import FastAPI, Depends, status, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy.orm import Session
 
 
 app = FastAPI()
+app.include_router(endpoints.router)
 
 Base.metadata.create_all(bind=engine)
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-db_dependency = Annotated[Session, Depends(get_db)]
+
 
 # pages #
 @app.get("/")
@@ -41,31 +32,22 @@ async def render_benefits_page(request: Request):
     return templates.TemplateResponse("benefits.html", {'request': request})
 
 @app.get("/seminars")
-async def render_benefits_page(request: Request):
+async def render_seminars_page(request: Request):
     return templates.TemplateResponse("seminars.html", {'request': request})
 
 @app.get("/contact-us")
-async def render_benefits_page(request: Request):
+async def render_contact_us_page(request: Request):
     return templates.TemplateResponse("contact-us.html", {'request': request})
 
 @app.get("/our-team")
-async def render_benefits_page(request: Request):
+async def render_team_page(request: Request):
     return templates.TemplateResponse("our-team.html", {'request': request})
 
 @app.get("/testimonial")
-async def render_benefits_page(request: Request):
+async def render_testimonial_page(request: Request):
     return templates.TemplateResponse("testimonial.html", {'request': request})
 
+@app.get("/join-us")
+async def render_join_us_page(request: Request):
+    return templates.TemplateResponse("register_volunteers.html", {'request': request})
 
-# endpoints #
-@app.get("/users")
-async def get_registered_users(db: db_dependency):
-    all_registered_users = db.query(Registration).all()
-    return all_registered_users
-
-@app.post("/register", status_code=status.HTTP_201_CREATED)
-async def register_users(db: db_dependency, registration_request: RegistrationRequest):
-    volunteer = Registration(**registration_request.model_dump())
-    db.add(volunteer)
-    db.commit()
-    return {"message": "Registered Successfully"}
