@@ -5,12 +5,11 @@ class Volunteers(Base):
     __tablename__ = "volunteers"
 
     id = Column(Integer, primary_key=True, index=True)
-    first_name = Column(String)
-    last_name = Column(String)
-    phone_number = Column(String)
+    full_name = Column(String)
     email = Column(String)
-    department = Column(String)
-    other_information = Column(String)
+    phone_number = Column(String)
+    home_address = Column(String)
+    state_of_origin = Column(String)
     registered = Column(Boolean)
 
 class Executives(Base):

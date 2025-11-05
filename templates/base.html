@@ -24,15 +24,36 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet" />
+    
+    <style>
+      /* Small flash/toast for successful registration */
+      #flash-message {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.85);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        z-index: 2000;
+        display: none;
+        font-weight: 600;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      }
+    </style>
   </head>
-  <body>
+  <body data-registered="{{ 'true' if registered else 'false' }}">
 
-  <div class="container-xxl bg-white p-0">
+  <div class="container-fluid bg-white p-0">
     {% include 'includes/header.html' %}
     {% block content %}
     {% endblock %}
     {% include 'includes/footer.html' %}
   </div>
+
+  <!-- Flash message element -->
+  <div id="flash-message">Registered Successfully</div>
 
 
   <!-- JavaScript Libraries -->
@@ -47,6 +68,30 @@
   <script src="{{ url_for('static', path='lib/lightbox/js/lightbox.min.js') }}"></script>
   <!-- Template Javascript -->
   <script src="{{ url_for('static', path='js/main.js') }}"></script>
+  <script>
+    // Show flash message when redirected after registration
+    (function(){
+      try {
+        const registered = document.body.dataset.registered === 'true';
+        if (registered) {
+          const flash = document.getElementById('flash-message');
+          flash.style.display = 'block';
+          // hide after 3 seconds
+          setTimeout(() => {
+            flash.style.display = 'none';
+            // remove query param from URL without reloading
+            if (window.history && window.history.replaceState) {
+              const url = new URL(window.location);
+              url.searchParams.delete('registered');
+              window.history.replaceState({}, document.title, url.pathname + url.search);
+            }
+          }, 5000);
+        }
+      } catch (e) {
+        // ignore
+      }
+    })();
+  </script>
    
 </body>
 </html>

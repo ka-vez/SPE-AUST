@@ -1,61 +1,331 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+/* Modern Registration Form Styles - SPE Theme */
 
-.container {
-    width: 600px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
+/* Back to Home Button */
+.back-to-home-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-h1 {
+.back-to-home-btn:hover {
+    background-color: #0056b3;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.registration-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6222CC 0%, #764ba2 100%);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-container {
+    max-width: 700px;
+    width: calc(100% - 40px);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(98, 34, 204, 0.3);
+    padding: 50px 60px;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+    margin: 0 auto;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background: #6222CC;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(98, 34, 204, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+.back-button:hover {
+    background: #FBA504;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(251, 165, 4, 0.3);
+}
+
+.back-button i {
+    font-size: 16px;
+}
+
+/* Form Header */
+.form-header {
     text-align: center;
-    color: #333;
+    margin-bottom: 35px;
+}
+
+.form-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6222CC 0%, #FBA504 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(98, 34, 204, 0.3);
+}
+
+.form-header h1 {
+    color: #6222CC;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Modern Form Styles */
+.modern-form {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.form-row {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    align-items: center;
-}
-
-button {
+    position: relative;
     width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.form-group label i {
+    color: #6222CC;
+    font-size: 1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: block;
+}
+
+/* Larger phone number field */
+.form-group input[type="tel"] {
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #6222CC;
+    box-shadow: 0 0 0 4px rgba(98, 34, 204, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236222CC' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 30px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #6222CC 0%, #FBA504 100%);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(98, 34, 204, 0.3);
 }
 
-button:hover {
-    background-color: #0056b3;
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(98, 34, 204, 0.4);
 }
 
-.message {
-    margin-top: 20px;
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn i {
+    font-size: 1rem;
+}
+
+/* Form Footer */
+.form-footer {
+    margin-top: 25px;
     text-align: center;
-    color: green;
+}
+
+.form-footer p {
+    color: #888;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.form-footer i {
+    color: #6222CC;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-wrapper {
+        padding: 30px 20px;
+    }
+
+    .registration-container {
+        padding: 35px 30px;
+        width: calc(100% - 40px);
+    }
+
+    .form-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .form-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .form-icon i {
+        font-size: 2rem;
+    }
+
+    .back-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-wrapper {
+        padding: 20px 15px;
+    }
+
+    .registration-container {
+        padding: 30px 25px;
+        width: calc(100% - 30px);
+    }
+
+    .back-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .back-to-home-btn {
+        top: 15px;
+        left: 15px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Input placeholder styling */
+::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+/* Remove autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
 }

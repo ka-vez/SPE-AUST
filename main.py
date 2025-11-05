@@ -21,7 +21,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # pages #
 @app.get("/")
 async def render_home_page(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+    # Check query param set after registration redirect and pass flag to template
+    registered_flag = request.query_params.get('registered') == 'true'
+    return templates.TemplateResponse("home.html", {"request": request, "registered": registered_flag})
 
 @app.get("/about")
 async def render_about_page(request: Request):
@@ -43,11 +45,10 @@ async def render_contact_us_page(request: Request):
 async def render_team_page(request: Request):
     return templates.TemplateResponse("our-team.html", {'request': request})
 
-@app.get("/testimonial")
-async def render_testimonial_page(request: Request):
-    return templates.TemplateResponse("testimonial.html", {'request': request})
-
 @app.get("/join-us")
 async def render_join_us_page(request: Request):
     return templates.TemplateResponse("register_volunteers.html", {'request': request})
 
+@app.get("/registration-success")
+async def render_registration_success_page(request: Request):
+    return templates.TemplateResponse("registration_success.html", {'request': request})

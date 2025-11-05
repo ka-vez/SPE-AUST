@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br><br><br>
+<!-- Registration Success Section -->
+<div class="container-fluid py-5" style="min-height: 70vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="success-card" style="background: white; border-radius: 20px; padding: 60px 40px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <!-- Success Icon -->
+                    <div class="success-icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, #6222CC 0%, #FBA504 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; animation: scaleIn 0.5s ease-out;">
+                        <i class="fas fa-check" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <h1 style="color: #6222CC; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Registration Successful!</h1>
+                    <p style="color: #666; font-size: 1.2rem; margin-bottom: 40px;">Thank you for registering with SPE AUST. We're excited to have you join our community!</p>
+                    
+                    <!-- WhatsApp Link -->
+                    <div style="margin-bottom: 40px;">
+                        <p style="color: #333; font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">Join our WhatsApp community to stay connected:</p>
+                        <a href="https://chat.whatsapp.com/your-group-link" target="_blank" class="whatsapp-btn" style="display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: white; text-decoration: none; padding: 16px 32px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+                            Join WhatsApp Group
+                        </a>
+                    </div>
+                    
+                    <!-- Go to Home Button -->
+                    <a href="/" class="home-btn" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #6222CC 0%, #FBA504 100%); color: white; text-decoration: none; padding: 14px 40px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(98, 34, 204, 0.3);">
+                        <i class="fas fa-home"></i>
+                        Go to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Purple Navbar */
+    .navbar {
+        background-color: #6222CC !important;
+    }
+    
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: white !important;
+    }
+    
+    .navbar .nav-link:hover {
+        color: #FBA504 !important;
+    }
+    
+    .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+    }
+    
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .whatsapp-btn:hover {
+        background: #128C7E;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+    
+    .home-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(98, 34, 204, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+        .success-card {
+            padding: 40px 30px !important;
+        }
+        
+        .success-card h1 {
+            font-size: 2rem !important;
+        }
+        
+        .success-card p {
+            font-size: 1rem !important;
+        }
+        
+        .whatsapp-btn, .home-btn {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+    }
+</style>
+{% endblock %}
