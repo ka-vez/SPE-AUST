@@ -56,6 +56,16 @@
         filter: brightness(0) invert(1);
     }
     
+    /* Make SPE white and AUST orange on mobile */
+    @media (max-width: 991.98px) {
+        .navbar-brand h1 {
+            color: white !important;
+        }
+        .navbar-brand h1 span {
+            color: orange !important;
+        }
+    }
+    
     @keyframes scaleIn {
         from {
             opacity: 0;

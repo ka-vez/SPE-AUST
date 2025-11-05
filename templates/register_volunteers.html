@@ -1,15 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
-    <link href="{{ url_for('static', path='/img/favicon.png') }}" rel="icon" />
+{% extends 'base.html' %}
+{% block content %}
     <link rel="stylesheet" href="{{ url_for ('static', path='css/register.css') }}">
-    <title>Volunteers Register</title>
-</head>
-<body>
-    <a href="/" class="back-to-home-btn">← Back to Home</a>
+
+  
+    <style>
+        /* Purple Navbar */
+        .navbar {
+            background-color: #6222CC !important;
+        }
+        
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: white !important;
+        }
+        
+        .navbar .nav-link:hover {
+            color: #FBA504 !important;
+        }
+        
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Make SPE white and AUST orange on mobile */
+        @media (max-width: 991.98px) {
+            .navbar-brand h1 {
+                color: white !important;
+            }
+            .navbar-brand h1 span {
+                color: orange !important;
+            }
+        }
+        
+        /* Center heading */
+        .container h1 {
+            text-align: center;
+        }
+        
+        /* Better Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #6222CC 0%, #FBA504 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(98, 34, 204, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(98, 34, 204, 0.4);
+        }
+        
+        button[type="submit"]:active {
+            transform: translateY(0);
+        }
+    </style>
+
+    <br><br><br><br><br><br>
     
     <div class="container">
         <h1>Student SPE Registration</h1>
@@ -74,11 +129,11 @@
                 </select>
             </div>
             <input type="hidden" name="is_web" value="true">
+            <br><br>
             <button type="submit">Submit</button>
         </form>
 
         <div id="message" class="message"></div>
     </div>
 
-</body>
-</html>
+{% endblock %}
