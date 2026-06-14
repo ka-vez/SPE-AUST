@@ -14,11 +14,17 @@ if not SEVALA_DB_URL:
 if SEVALA_DB_URL.startswith("postgres://"):
     SEVALA_DB_URL = SEVALA_DB_URL.replace("postgres://", "postgresql://", 1)
 
-print(f"Connecting to database: {SEVALA_DB_URL.split('@')[0]}@***")
-
-# SQL_DATABASE_URL = "sqlite:///registration.db"
-# engine = create_engine(SQL_DATABASE_URL, connect_args={'check_same_thread': False})
-engine = create_engine(SEVALA_DB_URL)
+try:
+    print(f"Connecting to database: {SEVALA_DB_URL.split('@')[0]}@***")
+    engine = create_engine(SEVALA_DB_URL)
+    # Test the connection to ensure PostgreSQL is online and credentials are correct
+    with engine.connect() as conn:
+        pass
+except Exception as e:
+    print(f"Database connection failed: {e}")
+    print("Falling back to SQLite database: registration.db")
+    SQL_DATABASE_URL = "sqlite:///registration.db"
+    engine = create_engine(SQL_DATABASE_URL, connect_args={'check_same_thread': False})
 
 SessionLocal = sessionmaker(autoflush=False, autocommit=False, bind=engine)
 
